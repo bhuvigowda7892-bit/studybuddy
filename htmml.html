@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marginalia — your AI study companion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="#top">
+      <span class="brand-mark">§</span>
+      Marginalia
+    </a>
+    <nav class="site-nav">
+      <a href="#how">How it works</a>
+      <a href="#subjects">Subjects</a>
+      <a href="#chat">Try it</a>
+      <a href="login.html">Log in</a>
+    </nav>
+    <a class="btn btn-ghost nav-cta" href="login.html">Get started</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===== HERO ===== -->
+  <section class="hero wrap">
+    <div class="hero-copy">
+      <p class="kicker">an AI study companion</p>
+      <h1>
+        Write in the margins.<br>
+        Let the answer <em>meet you there.</em>
+      </h1>
+      <p class="hero-sub">
+        Marginalia reads what you're stuck on, asks the question back to you
+        one way you haven't tried, and keeps a running page of what you've
+        actually learned — not just what you looked up.
+      </p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" data-scroll-to="#chat">Ask it something</button>
+        <a class="btn btn-text" href="#how">See how a session works →</a>
+      </div>
+      <p class="hero-proof">
+        <span class="proof-num">4.2</span> average questions before a student says
+        <span class="proof-quote">"okay, I've got it"</span>
+      </p>
+    </div>
+
+    <div class="hero-demo" aria-hidden="false">
+      <div class="notebook">
+        <div class="notebook-tab">Organic Chem — Ch. 7</div>
+        <div class="notebook-page" id="hero-thread">
+          <div class="line student">
+            why does SN2 flip the stereocenter but SN1 doesn't always?
+          </div>
+          <div class="line tutor">
+            SN2 backs the nucleophile in from the opposite side of the leaving
+            group — one clean shove, one inversion. SN1 drops the leaving
+            group first, so the molecule sits flat for a moment before
+            anything attacks it. What does a flat, planar carbon let a
+            nucleophile do that it couldn't do before?
+          </div>
+          <div class="line student typing-demo">
+            <span></span>
+          </div>
+        </div>
+        <div class="notebook-margin">
+          <span class="margin-note">↳ carbocation intermediate</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section id="how" class="how wrap">
+    <p class="section-kicker">how a session runs</p>
+    <ol class="how-steps">
+      <li>
+        <span class="step-index">1</span>
+        <h3>Bring the problem, not a prompt</h3>
+        <p>Paste the question, snap the textbook page, or just say what's
+        confusing. No need to phrase it well — that's the part it helps with.</p>
+      </li>
+      <li>
+        <span class="step-index">2</span>
+        <h3>It answers by asking</h3>
+        <p>Marginalia leans on questions before it hands you conclusions, so
+        the reasoning ends up in your notes, not just the answer.</p>
+      </li>
+      <li>
+        <span class="step-index">3</span>
+        <h3>The margin remembers</h3>
+        <p>Every session adds to a running page per subject — what tripped
+        you up, what clicked, what's worth a five-minute review tomorrow.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ===== SUBJECTS ===== -->
+  <section id="subjects" class="subjects wrap">
+    <p class="section-kicker">works across the syllabus</p>
+    <div class="subject-grid">
+      <article class="subject-card" style="--tint:#FFB648">
+        <h3>Math &amp; Stats</h3>
+        <p>Walks a proof or a problem set line by line, and won't skip the
+        step you're actually stuck on.</p>
+      </article>
+      <article class="subject-card" style="--tint:#7EE8B5">
+        <h3>Sciences</h3>
+        <p>Builds intuition with the mechanism first, the vocabulary second —
+        so the terms stick to something real.</p>
+      </article>
+      <article class="subject-card" style="--tint:#9BB4FF">
+        <h3>Languages</h3>
+        <p>Corrects in context, explains the grammar rule once you've felt
+        why the sentence was off.</p>
+      </article>
+      <article class="subject-card" style="--tint:#FF9B7B">
+        <h3>Writing &amp; Essays</h3>
+        <p>Pressure-tests your thesis and structure — never writes the
+        paragraph for you.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== LIVE CHAT DEMO ===== -->
+  <section id="chat" class="chat-section wrap">
+    <p class="section-kicker">try a real exchange</p>
+    <h2 class="chat-heading">Ask it something you're stuck on right now.</h2>
+
+    <div class="chat-shell">
+      <div class="chat-log" id="chat-log">
+        <div class="msg tutor">
+          <p>What are you working through today? Drop in a question, a
+          formula, or even just "I don't get derivatives."</p>
+        </div>
+      </div>
+
+      <form class="chat-form" id="chat-form">
+        <label class="sr-only" for="chat-input">Your question</label>
+        <textarea id="chat-input" placeholder="Type what you're stuck on…" rows="1" required></textarea>
+        <button type="submit" class="btn btn-primary chat-send">Ask</button>
+      </form>
+      <p class="chat-hint" id="chat-hint">This demo replies locally. Connect it to your Python backend to bring in a real model — see the README.</p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER CTA ===== -->
+  <section class="closing wrap">
+    <h2>Keep the notebook open.</h2>
+    <p>Marginalia is free to run locally while you build it out.</p>
+    <a class="btn btn-primary" href="login.html">Create your account</a>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <span>Marginalia — built with Flask / FastAPI on the backend, vanilla HTML/CSS/JS on the front.</span>
+    <span class="footer-mark">§</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

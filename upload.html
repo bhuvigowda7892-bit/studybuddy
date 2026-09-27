@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Upload material — Marginalia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="app-header">
+  <div class="wrap header-row">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">§</span>
+      Marginalia
+    </a>
+    <nav class="app-nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="upload.html" class="is-active">Upload material</a>
+    </nav>
+    <a class="btn btn-ghost" href="dashboard.html">← Dashboard</a>
+  </div>
+</header>
+
+<main class="wrap upload-shell">
+  <p class="section-kicker">add material</p>
+  <h1 class="dash-title">Upload a PDF</h1>
+  <p class="dash-sub">Drop in lecture notes, a textbook chapter, or slides — Marginalia
+  turns it into a plain-language explanation, a summary, a quiz, flashcards, and a
+  short study plan.</p>
+
+  <form id="upload-form">
+    <div class="dropzone" id="dropzone">
+      <span class="dropzone-icon">↑</span>
+      <h3>Drag a PDF here, or click to choose one</h3>
+      <p>PDF files only, up to 20MB.</p>
+      <input type="file" id="file-input" accept="application/pdf">
+    </div>
+  </form>
+
+  <div id="file-chip-wrap"></div>
+
+  <div class="processing-note" id="processing-note" style="display:none;">
+    <span class="spinner"></span>
+    <span id="processing-text">Reading your PDF and generating study material…</span>
+  </div>
+
+  <div id="results" style="display:none;">
+    <div class="result-tabs">
+      <button class="result-tab is-active" data-tab="tab-explanation">Simple explanation</button>
+      <button class="result-tab" data-tab="tab-summary">Summary</button>
+      <button class="result-tab" data-tab="tab-quiz">Quiz</button>
+      <button class="result-tab" data-tab="tab-flashcards">Flashcards</button>
+      <button class="result-tab" data-tab="tab-plan">Study plan</button>
+    </div>
+
+    <div class="result-panel prose is-active" id="tab-explanation"></div>
+    <div class="result-panel prose" id="tab-summary"></div>
+    <div class="result-panel" id="tab-quiz"></div>
+    <div class="result-panel" id="tab-flashcards"><div class="flash-grid"></div></div>
+    <div class="result-panel" id="tab-plan"></div>
+  </div>
+</main>
+
+<script src="upload.js"></script>
+</body>
+</html>

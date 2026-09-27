@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — Marginalia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="app-header">
+  <div class="wrap header-row">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">§</span>
+      Marginalia
+    </a>
+    <nav class="app-nav-links">
+      <a href="#overview" class="is-active">Overview</a>
+      <a href="upload.html">Upload material</a>
+      <a href="#ask-ai">Ask AI</a>
+      <a href="#planner">Planner</a>
+      <a href="#progress">Progress</a>
+    </nav>
+    <div class="user-chip">
+      <span class="avatar" id="user-avatar">?</span>
+      <span id="user-name">…</span>
+      <button class="link-btn" id="logout-btn">Log out</button>
+    </div>
+  </div>
+</header>
+
+<div class="dashboard-shell">
+  <aside class="sidebar">
+    <p class="sidebar-greeting" id="sidebar-greeting">Welcome back</p>
+    <p class="sidebar-sub">Here's where your subjects stand.</p>
+    <ul class="sidebar-nav">
+      <li><a href="#overview" class="is-active">Overview</a></li>
+      <li><a href="upload.html">Upload materials</a></li>
+      <li><a href="#ask-ai">Ask AI</a></li>
+      <li><a href="#quiz-flashcards">Quiz &amp; flashcards</a></li>
+      <li><a href="#planner">Study planner</a></li>
+      <li><a href="#progress">Progress roadmap</a></li>
+    </ul>
+  </aside>
+
+  <main class="dash-main">
+
+    <!-- OVERVIEW -->
+    <section class="dash-section" id="overview">
+      <h1 class="dash-title">Overview</h1>
+      <p class="dash-sub">A quick look at where things stand across every subject.</p>
+
+      <div class="stat-row">
+        <div class="stat-cell">
+          <span class="stat-num" id="stat-materials">0</span>
+          <span class="stat-label">materials uploaded</span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-num" id="stat-quizzes">0</span>
+          <span class="stat-label">quizzes taken</span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-num" id="stat-flashcards">0</span>
+          <span class="stat-label">flashcards reviewed</span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-num" id="stat-streak">0</span>
+          <span class="stat-label">day streak</span>
+        </div>
+      </div>
+
+      <div class="feature-grid">
+        <a class="feature-card" href="upload.html">
+          <span class="feature-glyph">↑</span>
+          <h3>Upload materials</h3>
+          <p>Add a PDF, and get a summary, quiz, flashcards and a study plan pulled from it.</p>
+        </a>
+        <a class="feature-card" href="#ask-ai">
+          <span class="feature-glyph">?</span>
+          <h3>Ask AI</h3>
+          <p>Ask about anything you're stuck on — same Socratic tutor as the home page demo.</p>
+        </a>
+        <a class="feature-card" href="upload.html#tab-quiz">
+          <span class="feature-glyph">✓</span>
+          <h3>Quiz</h3>
+          <p>Generated straight from your most recent upload. Upload something to unlock this.</p>
+        </a>
+        <a class="feature-card" href="upload.html#tab-flashcards">
+          <span class="feature-glyph">⟲</span>
+          <h3>Flashcards</h3>
+          <p>Flip cards built from the material you upload — term on the front, answer on the back.</p>
+        </a>
+        <a class="feature-card" href="#planner">
+          <span class="feature-glyph">▤</span>
+          <h3>Study planner</h3>
+          <p>A day-by-day checklist you can tick off as you go.</p>
+        </a>
+        <a class="feature-card" href="#progress">
+          <span class="feature-glyph">↝</span>
+          <h3>Progress roadmap</h3>
+          <p>Milestones from your first login to a steady study habit.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- ASK AI -->
+    <section class="dash-section" id="ask-ai">
+      <h2 class="dash-title">Ask AI</h2>
+      <p class="dash-sub">Same tutor from the home page — ask about anything you're working on.</p>
+
+      <div class="chat-shell">
+        <div class="chat-log" id="dash-chat-log">
+          <div class="msg tutor">
+            <p>What are you working through today?</p>
+          </div>
+        </div>
+        <form class="chat-form" id="dash-chat-form">
+          <label class="sr-only" for="dash-chat-input">Your question</label>
+          <textarea id="dash-chat-input" placeholder="Type what you're stuck on…" rows="1" required></textarea>
+          <button type="submit" class="btn btn-primary chat-send">Ask</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- QUIZ + FLASHCARDS pointer -->
+    <section class="dash-section" id="quiz-flashcards">
+      <h2 class="dash-title">Quiz &amp; flashcards</h2>
+      <p class="dash-sub">
+        These are generated from your uploaded material, so they live on the
+        <a href="upload.html" style="color: var(--amber);">upload page</a> —
+        upload a PDF and both will appear there automatically.
+      </p>
+    </section>
+
+    <!-- PLANNER -->
+    <section class="dash-section" id="planner">
+      <h2 class="dash-title">Study planner</h2>
+      <p class="dash-sub">A simple checklist — check things off as you go.</p>
+
+      <ul class="planner-list" id="planner-list"></ul>
+    </section>
+
+    <!-- PROGRESS ROADMAP -->
+    <section class="dash-section" id="progress">
+      <h2 class="dash-title">Progress roadmap</h2>
+      <p class="dash-sub">The path from setting up to a steady study habit.</p>
+
+      <div class="roadmap" id="roadmap"></div>
+    </section>
+
+  </main>
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>
